@@ -1,0 +1,15 @@
+An application to recognise the color and type(sedan,hatchback,bus,etc.) of the vehicles when we input its picture.
+
+Dependencies:
+1. python 2.7
+2. numpy
+3. lmdb
+4. caffe
+5. opencv 2
+6. pyqt
+
+How to Run:
+
+1. run make_prediction.py
+2. select file for predicting
+3. Press 'Predict'

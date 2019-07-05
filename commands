@@ -1,0 +1,24 @@
+python /home/neha/Documents/MI/caffe/python/draw_net.py /home/neha/Documents/MI/net_model.prototxt /home/neha/Documents/MI/caffe_model_1.png
+
+
+
+/home/neha/Documents/MI/caffe/build/tools/compute_image_mean -backend=lmdb /home/neha/Documents/MI/input/train_lmdb /home/neha/Documents/MI/input/mean.binaryproto
+
+
+
+
+layer {
+  name: "SVM"
+  type: "HingeLoss"
+  bottom: "fc8"
+  bottom: "label"
+  top: "SVM"
+  hinge_loss_param{
+    norm: L2
+  }
+  loss_param{
+    ignore_label: 9
+    normalize: 1
+    normalization: VALID
+  }
+}
